@@ -26,10 +26,13 @@ oc new-project liberty-project
 
 kubectl delete -k .
 
-
+oc apply -f jpa20cdiwar.yaml
+oc delete -f jpa20cdiwar.yaml
 
 #to see ehat happens if you apply without actually applyig the changes
 kubectl apply -k . --dry-run=client
 
 install Argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+
+kubectl patch app jpa20cdiwar -n argocd --type='json' -p='[{"op": "replace", "path": "/spec/syncPolicy", "value":{"automated": {}}}]'

@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: manage-liberty-namespace # Name of the Argo CD application
+  namespace: openshift-gitops # Argo CD namespace (or argocd if you're using plain Argo CD)
+spec:
+  destination:
+    namespace: openshift-gitops # Argo CD namespace (for the Application itself)
+    server: https://kubernetes.default.svc # Kubernetes API server for the cluster
+  project: default # Argo CD project to associate with this application
+  source:
+    repoURL: https://github.com/ShadyIBM/liberty.git # Git repository URL containing your namespace YAML
+    targetRevision: main # Branch (or tag) in the Git repository
+    path: namespaces/ # Path to the directory containing namespace YAML files in the Git repository
+  syncPolicy:
+    automated:
+      prune: true # Automatically remove namespaces not present in Git
+      selfHeal: true # Automatically restore namespaces to their Git state if modified in the cluster

@@ -1,4 +1,4 @@
 resources:
   - liberty-project.yaml
-  - argocd.yaml
+  # - argocd.yaml
   - openshift-gitops.yaml

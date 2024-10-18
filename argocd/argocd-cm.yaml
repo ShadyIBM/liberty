@@ -1,7 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: argocd-cm
-  namespace: openshift-gitops # or argocd if you are using the Argo CD namespace
-data:
-  application.namespaces: liberty-project

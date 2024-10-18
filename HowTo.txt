@@ -1,4 +1,18 @@
-oc apply -k ./namespaces
+Login to openshift
+oc login <openshift-cluster-url> --token=<your-token>
+
+CD to namespaces directory
+kubectl apply -k .
+
+Create Argocd instance in UI
+Get Argocd sercret from secrets/argocd-cluster
+
+Deploy argocd applications
+CD to argocd directory
+kubectl apply -k .
+
+
+
 
 Change github repo detail in bootstrap/bootstrap.yaml
 
@@ -6,3 +20,13 @@ oc login <openshift-cluster-url> --token=<your-token>
 
 oc new-project liberty-project
 
+
+
+
+
+
+#to see ehat happens if you apply without actually applyig the changes
+kubectl apply -k . --dry-run=client
+
+install Argocd
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml

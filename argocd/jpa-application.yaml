@@ -11,7 +11,7 @@ spec:
   source:
     repoURL: https://github.com/ShadyIBM/liberty.git # Your Git repository URL
     targetRevision: main # Git branch (e.g., main)
-    path: apps/ # The directory where the OpenLibertyApplication YAML resides, not the specific file
+    path: apps/jpa20cdiwar/ # The directory where the OpenLibertyApplication YAML resides, not the specific file
   syncPolicy:
     automated:
       prune: true # Automatically delete resources not in the Git repository

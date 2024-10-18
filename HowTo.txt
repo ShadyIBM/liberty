@@ -1,0 +1,8 @@
+oc apply -k ./namespaces
+
+Change github repo detail in bootstrap/bootstrap.yaml
+
+oc login <openshift-cluster-url> --token=<your-token>
+
+oc new-project liberty-project
+

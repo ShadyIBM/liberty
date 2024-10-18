@@ -1,0 +1,11 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: my-liberty-route
+  namespace: liberty-project
+spec:
+  to:
+    kind: Service
+    name: my-liberty-service
+  port:
+    targetPort: 80

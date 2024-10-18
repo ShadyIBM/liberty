@@ -10,7 +10,7 @@ spec:
   project: default
   source:
     path: 0-bootstrap/single-cluster
-    repoURL: github.com/ShadyIBM/liberty
+    repoURL: https://github.com/ShadyIBM/liberty.git
     targetRevision: main
   syncPolicy:
     automated:

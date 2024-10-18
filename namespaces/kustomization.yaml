@@ -1,4 +1,3 @@
 resources:
-  - openshift-gitops-namespace.yaml
   - liberty-project.yaml
   - argocd.yaml

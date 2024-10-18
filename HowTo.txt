@@ -11,6 +11,8 @@ Deploy argocd applications
 CD to argocd directory
 kubectl apply -k .
 
+kubectl apply -k . -n argocd
+
 
 
 

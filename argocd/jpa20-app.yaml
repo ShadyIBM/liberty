@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: jpa20cdiwar # Name of the Argo CD application
-  namespace: argocd # Argo CD namespace (or openshift-gitops if using OpenShift GitOps)
+  namespace: openshift-gitops # Argo CD namespace (or openshift-gitops if using OpenShift GitOps)
 spec:
   destination:
     namespace: liberty-project # Namespace where the OpenLibertyApplication will be deployed

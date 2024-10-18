@@ -1,2 +1,2 @@
 resources:
-  - application-cr.yaml
+  - jpa20cdiwar.yaml

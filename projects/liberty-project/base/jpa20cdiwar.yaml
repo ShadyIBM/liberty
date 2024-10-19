@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: jpa20cdiwar
-  namespace: openshift-gitops-operators
+  namespace: openshift-gitops-operator
 spec:
   project: default
   source:

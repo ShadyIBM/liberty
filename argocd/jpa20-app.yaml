@@ -1,18 +1,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: jpa20cdiwar # Name of the Argo CD application
-  namespace: openshift-operators # Argo CD namespace (or openshift-gitops if using OpenShift GitOps)
+  name: jpa20cdiwar
+  namespace: openshift-operators
 spec:
-  destination:
-    namespace: liberty-project # Namespace where the OpenLibertyApplication will be deployed
-    server: https://kubernetes.default.svc # Kubernetes API server URL for the cluster
-  project: default # Argo CD project to associate with this application
+  project: default
   source:
-    repoURL: https://github.com/ShadyIBM/liberty.git # Your Git repository URL
-    targetRevision: main # Git branch (e.g., main)
-    path: apps/ # The directory where the OpenLibertyApplication YAML resides, not the specific file
+    repoURL: https://github.com/ShadyIBM/liberty.git
+    path: apps/
+    targetRevision: HEAD
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: liberty-project
   syncPolicy:
     automated:
-      prune: true # Automatically delete resources not in the Git repository
-      selfHeal: true # Automatically sync resources if they are manually modified in the cluster
+      prune: true
+      selfHeal: true

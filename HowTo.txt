@@ -1,3 +1,7 @@
+Installing argocd
+https://production-gitops.dev/guides/cp4ba/process-mining/cluster-config/gitops-tekton-argocd/#clone-sample-repositories
+
+
 Login to openshift
 oc login <openshift-cluster-url> --token=<your-token>
 
@@ -36,74 +40,4 @@ install Argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 
 kubectl patch app jpa20cdiwar -n argocd --type='json' -p='[{"op": "replace", "path": "/spec/syncPolicy", "value":{"automated": {}}}]'
-
-
-
-apiVersion: argoproj.io/v1alpha1
-kind: ArgoCD
-metadata:
-  name: argocd
-  namespace: openshift-operators 
-spec:
-  controller:
-    resources:
-      limits:
-        cpu: 2000m
-        memory: 2048Mi
-      requests:
-        cpu: 250m
-        memory: 1024Mi
-  ha:
-    enabled: false
-    resources:
-      limits:
-        cpu: 500m
-        memory: 256Mi
-      requests:
-        cpu: 250m
-        memory: 128Mi
-  redis:
-    resources:
-      limits:
-        cpu: 500m
-        memory: 256Mi
-      requests:
-        cpu: 250m
-        memory: 128Mi
-  repo:
-    resources:
-      limits:
-        cpu: 1000m
-        memory: 512Mi
-      requests:
-        cpu: 250m
-        memory: 256Mi
-  server:
-    resources:
-      limits:
-        cpu: 500m
-        memory: 256Mi
-      requests:
-        cpu: 125m
-        memory: 128Mi
-    route:
-      enabled: true
-  rbac:
-    policy: |
-      p, role:admin, clusters, get, *, allow
-
-  # Add this part to enable cluster-scoped mode
-  clusterConfig:
-    enabled: true
-
-  sso:
-    dex:
-      resources:
-        limits:
-          cpu: 500m
-          memory: 256Mi
-        requests:
-          cpu: 250m
-          memory: 128Mi
-    provider: dex
 

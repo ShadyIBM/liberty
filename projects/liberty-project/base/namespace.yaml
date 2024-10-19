@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/ShadyIBM/liberty.git
-    path: namespaces/
+    path: namespaces
     targetRevision: main
   destination:
     server: https://kubernetes.default.svc

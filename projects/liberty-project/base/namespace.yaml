@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: liberty-project-namespace
-  namespace: openshift-gitops-operator
+  namespace: openshift-operators
 spec:
   project: default
   source:

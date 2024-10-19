@@ -1,4 +1,4 @@
 resources:
-  - ../base
+  - projects/liberty-project/base
 
 namespace: liberty-project

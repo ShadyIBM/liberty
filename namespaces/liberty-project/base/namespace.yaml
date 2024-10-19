@@ -1,6 +1,18 @@
-apiVersion: v1
-kind: Namespace
+apiVersion: argoproj.io/v1alpha1
+kind: Application
 metadata:
-  name: liberty-project
-  labels:
-    argocd-managed: "true"
+  name: liberty-project-namespace
+  namespace: openshift-operators
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/ShadyIBM/liberty.git
+    path: argocd/
+    targetRevision: HEAD
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: liberty-project
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

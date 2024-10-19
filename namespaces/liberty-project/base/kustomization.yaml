@@ -1,0 +1,4 @@
+resources:
+  - namespace.yaml # Points to your namespace definition
+  - jpa20cdiwar.yaml # Points to your OpenLiberty application definition
+

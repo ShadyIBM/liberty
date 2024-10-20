@@ -1,3 +1,5 @@
+Install open liberty operator
+
 
 Create namespaces
 For argocd 

@@ -37,6 +37,10 @@
 > Notes:
 > Any future chnage to the liberty app will be applied and refected in Argocd.
 
+> Argocd Instance
+
+> https://argocd-server-openshift-operators.itzroks-664003h6xc-qalcq8-6ccd7f378ae819553d37d5f2ee142bd6-0000.us-south.containers.appdomain.cloud/applications?showFavorites=false&proj=&sync=&autoSync=&health=&namespace=&cluster=&labels=
+
 ---
 
 ## EOF

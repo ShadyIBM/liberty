@@ -1,18 +1,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: jpa20cdiwar
-  namespace: openshift-operators
+  name: liberty-app
+  namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/ShadyIBM/liberty.git
-    path: apps
-    targetRevision: main
+    path: apps/liberty
+    targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
     namespace: liberty-project
   syncPolicy:
+    syncOptions:
+      - CreateNameSpace=true
     automated:
       prune: true
       selfHeal: true

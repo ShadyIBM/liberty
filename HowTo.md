@@ -14,7 +14,15 @@
 
 ### 5. Get Argocd route and access using admin/password from secrets/argocd-cluster
 
+### 5. cd to deployment/liberty
+
 ### 6. Create the liberty namespace with option for argo to manage it.
+
+```
+    kubectl apply -f namespace.yaml
+    OR
+    ./apply-namespace.sh
+```
 
 ### 4. Add all to github
 
@@ -22,9 +30,18 @@
 
 ```
     kubectl apply -f liberty-app.yaml
+    OR
+    kubectl apply -k .
 ```
 
 > Notes:
+> Any future chnage to the liberty app will be applied and refected in Argocd.
+
+---
+
+## EOF
+
+---
 
 Login to openshift
 oc login <openshift-cluster-url> --token=<your-token>

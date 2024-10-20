@@ -5,7 +5,7 @@
 ### 2. Create namespace for argocd
 
 ```
-    kubectl create namespce argocd
+    kubectl create namespace argocd
 ```
 
 ### 3. Create Argocd instance and permissions

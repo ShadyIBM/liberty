@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: liberty-app
-  namespace: argocd
+  namespace: openshift-operators
 spec:
   project: default
   source:

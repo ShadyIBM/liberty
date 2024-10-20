@@ -8,11 +8,13 @@
     kubectl create namespace argocd
 ```
 
-### 3. Create Argocd instance and permissions
+### 3. Create Argocd from OCP operators
 
-```
-   kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
-```
+### 4. Get Argocd sercret from secrets/argocd-cluster
+
+### 5. Get Argocd route and access using admin/password from secrets/argocd-cluster
+
+### 6. Create the liberty namespace with option for argo to manage it.
 
 ### 4. Add all to github
 

@@ -1,20 +1,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: liberty-app
+  name: liberty-namespace
   namespace: openshift-operators
 spec:
   project: default
   source:
     repoURL: https://github.com/ShadyIBM/liberty.git
-    path: apps/liberty
+    path: apps/liberty/namespace
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
-    namespace: liberty-project
+    namespace: default
   syncPolicy:
-    syncOptions:
-      - CreateNameSpace=true
     automated:
       prune: true
       selfHeal: true

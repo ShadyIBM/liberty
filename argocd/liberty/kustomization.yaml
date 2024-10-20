@@ -1,0 +1,4 @@
+resources:
+  - liberty-namespace.yaml # Points to your namespace definition
+  - liberty-app.yaml # Points to your OpenLiberty application definition
+

@@ -6,6 +6,6 @@ metadata:
   name: jpa20cdiwar
   namespace: liberty-project
 spec:
-  replicas: 2
+  replicas: 1
   applicationImage: quay.io/shadyattia/jpa20cdiwar:v1
   expose: true
